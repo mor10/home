@@ -102,7 +102,7 @@ def draw_badge():
 
     # Draw the firstname, scaling it based on the available width
     display.set_pen(0)
-    name_size = 10 * size_adjustment  # A sensible starting scale
+    name_size = 4 * size_adjustment  # A sensible starting scale
     while True:
         name_length = display.measure_text(first_name, name_size)
         if name_length >= TEXT_WIDTH and name_size >= 0.1:
@@ -148,7 +148,7 @@ state = {
     "font_idx": 0,
     "picture_idx": 0
 }
-badger_os.state_load("badge++", state)
+badger_os.state_load("morten", state)
 
 # Create a new Badger and set it to update NORMAL
 display = badger2040.Badger2040()
@@ -190,7 +190,7 @@ try:
     
     # Truncate Title and pronouns to fit
     title = truncate_string(title, DETAILS_TEXT_SIZE, 310)
-    pronouns = truncate_string(pronouns, DETAILS_TEXT_SIZE, 210)
+    pronouns = truncate_string(pronouns, DETAILS_TEXT_SIZE, 110)
     handle = truncate_string(handle, DETAILS_TEXT_SIZE, 220)
     
 finally:
@@ -255,7 +255,7 @@ while True:
 
     if changed:
         draw_badge()
-        badger_os.state_save("badge++", state)
+        badger_os.state_save("morten", state)
         changed = False
 
     display.halt()
