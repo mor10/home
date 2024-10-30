@@ -102,7 +102,7 @@ def draw_badge():
 
     # Draw the firstname, scaling it based on the available width
     display.set_pen(0)
-    name_size = 4 * size_adjustment  # A sensible starting scale
+    name_size = 10 * size_adjustment  # Giant first name
     while True:
         name_length = display.measure_text(first_name, name_size)
         if name_length >= TEXT_WIDTH and name_size >= 0.1:
@@ -113,7 +113,7 @@ def draw_badge():
 
     # Draw the lastname, scaling it based on the available width
     display.set_pen(0)
-    lastname_size = 3 * size_adjustment  # A sensible starting scale
+    lastname_size = 3 * size_adjustment  # Small last name
     while True:
         lastname_length = display.measure_text(last_name, lastname_size)
         if lastname_length >= TEXT_WIDTH and lastname_size >= 0.1:
@@ -190,7 +190,7 @@ try:
     
     # Truncate Title and pronouns to fit
     title = truncate_string(title, DETAILS_TEXT_SIZE, 310)
-    pronouns = truncate_string(pronouns, DETAILS_TEXT_SIZE, 110)
+    pronouns = truncate_string(pronouns, DETAILS_TEXT_SIZE, 210)
     handle = truncate_string(handle, DETAILS_TEXT_SIZE, 220)
     
 finally:
